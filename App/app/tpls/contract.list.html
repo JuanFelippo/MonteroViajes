@@ -1,0 +1,44 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Contratos</h3>
+	</div>
+	<div class="panel-body">
+		
+		<table datatable="ng" dt-options="dtOptions" class="table table-bordered table-striped" id="example-4">
+			<thead>
+				<tr>
+					<th>Escuela</th>
+					<th>Curso</th>
+					<th>Div</th>
+					<th>Precio Original</th>
+					<th>Precio Actualizado</th>
+					<th>Destino</th>
+					<th>Fecha Viaje</th>
+					<th>Fecha Firma</th>
+					<th>Estado</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+		    <tbody>
+				<tr ng-repeat="contract in contracts">
+					<td>{{contract.school}}</td>
+					<td>{{contract.course}}</td>
+					<td>{{contract.letter}}</td>
+					<td>{{contract.originalPrice}}</td>
+					<td>{{contract.updatedPrice}}</td>
+					<td>{{contract.destination[0].name}} x {{contract.destination[0].days}}</td>
+					<td>{{contract.tripDate | date:'dd/MM/yyyy'}}</td>
+					<td>{{contract.signDate | date:'dd/MM/yyyy'}}</td>
+					<td>{{contract.approved ? 'Aprobado' : 'Pendiente'}}</td>
+					<td>
+						<a  ng-href="index.html#/app/contract/{{contract._id}}" class="btn btn-secondary btn-sm btn-icon icon-left">
+							Ver/Editar
+						</a>
+					</td>
+				</tr>
+			</tbody>
+
+		</table>
+		
+	</div>
+</div>

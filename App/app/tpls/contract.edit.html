@@ -1,0 +1,232 @@
+
+<div class="row">
+	<div class="col-sm-12">
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Contrato</h3>
+			</div>
+			<div class="panel-body">
+
+				<form ng-submit="edit($event)" role="form" class="form-horizontal" role="form">
+                        
+                    <div class="form-group">
+						<label class="col-sm-2 control-label">Nombre Completo Tutor</label>
+
+						<div class="col-sm-10">
+							<input type="text" ng-model="contract.tutors[0].name" class="form-control" placeholder="Nombre Primer Tutor" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">DNI</label>
+
+						<div class="col-sm-10">
+							<input type="number" ng-model="contract.tutors[0].dni" min="1" class="form-control" placeholder="DNI" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="field-2">Fecha Nacimiento</label>
+
+						<div class="col-sm-10">
+							<input type="date" 
+							ng-model="contract.tutors[0].dob" value="contract.tutors[0].dob | date:'yyyy-MM-dd'}}"class="form-control" id="field-2" placeholder="yyyy-MM-dd" max="{{date | date:'yyyy-MM-dd'}}">
+						</div>
+					</div> 
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Dirección</label>
+
+						<div class="col-sm-10">
+							<input type="text" ng-model="contract.tutors[0].address" class="form-control" placeholder="Dirección">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Telefono</label>
+
+						<div class="col-sm-10">
+							<input type="text" ng-model="contract.tutors[0].tel" class="form-control" placeholder="Tel.">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Email</label>
+
+						<div class="col-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<i class="linecons-mail"></i>
+								</span>
+								<input type="email" ng-model="contract.tutors[0].email" class="form-control" placeholder="Email">
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group-separator"></div>
+
+                     <div class="form-group">
+						<label class="col-sm-2 control-label">Nombre Completo Tutor</label>
+
+						<div class="col-sm-10">
+							<input type="text" ng-model="contract.tutors[1].name" class="form-control" placeholder="Nombre Segundo Tutor" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">DNI</label>
+
+						<div class="col-sm-10">
+							<input type="number" ng-model="contract.tutors[1].dni" min="1" class="form-control" placeholder="DNI" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="field-2">Fecha Nacimiento</label>
+
+						<div class="col-sm-10">
+							<input type="date" ng-model="contract.tutors[1].dob" class="form-control" id="field-2" placeholder="yyyy-MM-dd" max="{{date | date:'yyyy-MM-dd'}}" required>
+						</div>
+					</div> 
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Dirección</label>
+
+						<div class="col-sm-10">
+							<input type="text" ng-model="contract.tutors[1].address" class="form-control" placeholder="Dirección">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Telefono</label>
+
+						<div class="col-sm-10">
+							<input type="text" ng-model="contract.tutors[1].tel" class="form-control" placeholder="Tel.">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Email</label>
+
+						<div class="col-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<i class="linecons-mail"></i>
+								</span>
+								<input type="email" ng-model="contract.tutors[1].email" class="form-control" placeholder="Email">
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group-separator"></div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="field-1">Escuela</label>
+
+						<div class="col-sm-10">
+							<input type="text"ng-model="contract.school" class="form-control" id="field-1" placeholder="Nombre Escuela" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="field-3">Curso</label>
+
+						<div class="col-sm-10">
+							<input type="number" ng-model="contract.course" class="form-control" id="field-3" placeholder="Nº Curso" min="1" max="12" required>
+						</div>
+					</div>
+				 	<div class="form-group">
+						<label class="col-sm-2 control-label" for="field-2">Fecha Viaje</label>
+
+						<div class="col-sm-10">
+							<input type="date" ng-model="contract.tripDate" class="form-control" id="field-2" placeholder="yyyy-MM-dd" min="{{date | date:'yyyy-MM-dd'}}" max="2020-12-31">
+						</div>
+					</div> 
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Destino</label>
+						<div class="col-sm-10">
+                            	<select ng-model="contract.destination[0]" ng-options="item as item.name+' x '+item.days for item in destinations track by item._id" class="form-control">
+                               </select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Precio</label>
+
+						<div class="col-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon">$</span>
+								<input type="number" ng-model="contract.updatedPrice" type="number" class="form-control" placeholder="Precio" min="1.0" required>
+								<span class="input-group-addon">.00</span>
+							</div>
+						</div>
+					</div>
+					<!--<div class="form-group">
+						<label class="col-sm-2 control-label">Vendedor</label>
+						<div class="col-sm-10">
+							<select ng-model="contract.seller" ng-options="item as item.name for item in agents" class="form-control">
+                            </select>
+						</div>
+					</div>-->
+					<div class="form-group">
+					    <label class="col-sm-2 control-label">Vendedores</label>
+				    </div>
+					<div class="form-group" ng-repeat="fa in contract.commissions track by $index">
+						<label class="col-sm-2 control-label">Vendedor</label>
+						<div class="col-sm-10">
+							<select ng-model="contract.commissions[$index].salesAgent" ng-options="agent as agent.name for agent in agents" class="form-control" required>
+                            </select>
+                            <label class="col-sm-2 control-label">comisión</label>
+                            <input type="number" ng-model="contract.commissions[$index].percentage" placeholder="% comisión" required min="0" required>
+                             <button ng-click="removeSeller($event,$index)"class="btn btn-warning btn-icon">
+						      <i class="fa-remove"></i>
+					    	  <!--<span>-</span>-->
+				    	    </button>
+						</div>
+					</div>
+					<div class="form-group">
+					    <button ng-click="addSeller($event)"class="btn btn-success btn-icon">
+						      <i class="fa-rocket"></i>
+					    	  <span>+ Vendedor</span>
+				    	</button>
+				    </div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Fecha Firma</label>
+
+						<div class="col-sm-10">
+							<input ng-model="contract.signDate" type="date" 
+							max="{{date | date:'yyyy-MM-dd'}}" class="form-control" placeholder="Fecha Firma Contrato" required>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Estado</label>
+                        <div class="col-sm-9">
+							<div class="form-block">
+								<input type="checkbox" ng-model="contract.approved" class="iswitch iswitch-secondary">
+							</div>
+						</div>
+					</div>
+					 <div class="form-group">
+						<label class="col-sm-2 control-label" for="field-5">Observación</label>
+						<div class="col-sm-10">
+							<textarea ng-model="contract.comment" class="form-control autogrow" cols="5" id="field-5" placeholder="Observación"></textarea>
+						</div>
+					</div>
+				    <div class="form-group">
+				        <a href="{{attachURL}}" download="adjunto.pdf">Ver Adjunto</a>
+				    </div>
+					<div class="form-group">
+					    <button ng-click="goBack()" class="btn btn-success btn-icon">
+						      <i class="fa-rocket"></i>
+					    	  <span>Volver</span>
+				    	</button>
+				    </div>
+				    <div class="form-group">
+					    <button type="submit" class="btn btn-warning btn-icon">
+						      <i class="fa-rocket"></i>
+					    	  <span>Grabar</span>
+				    	</button>
+				    </div>
+					<!--  <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
+					  <code>userType = {{userType}}</code><br>
+					  <code>myForm.input.$valid = {{myForm.input.$valid}}</code><br>
+					  <code>myForm.input.$error = {{myForm.input.$error}}</code><br>
+					  <code>myForm.$valid = {{myForm.$valid}}</code><br>
+					  <code>myForm.$error.required = {{!!myForm.$error.required}}</code><br> -->
+				</form>
+
+			</div>
+		</div>
+
+	</div>
+</div>
